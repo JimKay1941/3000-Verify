@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ChineseStudy" Class="_3000_CharactersDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=jb1essy2yr.database.windows.net;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID=GalleryServerPro" SettingsObjectName="_3000_Verify.Properties.Settings" SettingsPropertyName="ZChineseStudyConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[3000-Characters]" Member="_3000_Characters">
+    <Type Name="_3000_Character">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FEseq" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Zhuyin" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Traditional" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="English" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NumPinyin" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CritPinyin" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Simplified" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Cji" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

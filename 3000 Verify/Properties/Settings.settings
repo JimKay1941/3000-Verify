@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="_3000_Verify.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ChineseStudyConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID=sa;Password=97GeneralHospital&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID=sa;Password=97GeneralHospital</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">97GeneralHospital</Value>
+    </Setting>
+    <Setting Name="SqlServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ACER0</Value>
+    </Setting>
+    <Setting Name="UserId" Type="System.String" Scope="User">
+      <Value Profile="(Default)">sa</Value>
+    </Setting>
+    <Setting Name="UserConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID=sa;Password=97GeneralHospital</Value>
+    </Setting>
+    <Setting Name="ChineseStudyConnection" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID=sa;Password=97GeneralHospital</Value>
+    </Setting>
+    <Setting Name="ChineseStudyConnectionString2" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID=sa;Password=97GeneralHospital&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID=sa;Password=97GeneralHospital</Value>
+    </Setting>
+    <Setting Name="ChineseStudyConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID=sa;Password=97GeneralHospital&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID=sa;Password=97GeneralHospital</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
