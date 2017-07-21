@@ -117,5 +117,29 @@ namespace _3000_Verify.Properties {
                 return ((string)(this["ChineseStudyConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Know {
+            get {
+                return ((int)(this["Know"]));
+            }
+            set {
+                this["Know"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int Studying {
+            get {
+                return ((int)(this["Studying"]));
+            }
+            set {
+                this["Studying"] = value;
+            }
+        }
     }
 }

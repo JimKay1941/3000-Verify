@@ -48,6 +48,24 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -81,6 +99,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="InstalledLangs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstalledLangs.Designer.cs">
+      <DependentUpon>InstalledLangs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetUserCredentials.cs">
@@ -89,10 +113,12 @@
     <Compile Include="SetUserCredentials.Designer.cs">
       <DependentUpon>SetUserCredentials.cs</DependentUpon>
     </Compile>
-    <Compile Include="Variables.cs" />
     <None Include="Dictionary3000.dbml.layout">
       <DependentUpon>Dictionary3000.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="InstalledLangs.resx">
+      <DependentUpon>InstalledLangs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SetUserCredentials.resx">
       <DependentUpon>SetUserCredentials.cs</DependentUpon>
     </EmbeddedResource>

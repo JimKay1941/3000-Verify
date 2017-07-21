@@ -1,16 +1,24 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3000 Verify", "3000 Verify\3000 Verify.csproj", "{A1B1BCA5-DE02-4E68-A010-34A8736495D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1B1BCA5-DE02-4E68-A010-34A8736495D6}.Debug|x64.ActiveCfg = Debug|x64
+		{A1B1BCA5-DE02-4E68-A010-34A8736495D6}.Debug|x64.Build.0 = Debug|x64
 		{A1B1BCA5-DE02-4E68-A010-34A8736495D6}.Debug|x86.ActiveCfg = Debug|x86
 		{A1B1BCA5-DE02-4E68-A010-34A8736495D6}.Debug|x86.Build.0 = Debug|x86
+		{A1B1BCA5-DE02-4E68-A010-34A8736495D6}.Release|x64.ActiveCfg = Release|x64
+		{A1B1BCA5-DE02-4E68-A010-34A8736495D6}.Release|x64.Build.0 = Release|x64
 		{A1B1BCA5-DE02-4E68-A010-34A8736495D6}.Release|x86.ActiveCfg = Release|x86
 		{A1B1BCA5-DE02-4E68-A010-34A8736495D6}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection

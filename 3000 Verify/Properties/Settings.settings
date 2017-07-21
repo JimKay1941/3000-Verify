@@ -41,5 +41,11 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID=sa;Password=97GeneralHospital</Value>
     </Setting>
+    <Setting Name="Know" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Studying" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

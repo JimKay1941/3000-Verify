@@ -1,4 +1,5 @@
-﻿namespace _3000_Verify
+﻿using System.Windows.Forms;
+namespace _3000_Verify
 {
     partial class Form1
     {
@@ -29,11 +30,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtMainCharacter = new System.Windows.Forms.TextBox();
             this.btnContains = new System.Windows.Forms.Button();
             this.gridOneMain = new System.Windows.Forms.DataGridView();
@@ -59,6 +60,7 @@
             this._3000_CharactersTableAdapter = new _3000_Verify.ChineseStudyDataSetTableAdapters._3000_CharactersTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtFound = new System.Windows.Forms.TextBox();
+            this.ShowLanguages = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridOneMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chineseStudyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.charactersBindingSource)).BeginInit();
@@ -72,6 +74,8 @@
             this.txtMainCharacter.Name = "txtMainCharacter";
             this.txtMainCharacter.Size = new System.Drawing.Size(34, 36);
             this.txtMainCharacter.TabIndex = 1;
+            this.txtMainCharacter.Click += new System.EventHandler(this.txtMainCharacter_Click);
+            this.txtMainCharacter.Enter += new System.EventHandler(this.txtMainCharacter_Enter);
             // 
             // btnContains
             // 
@@ -98,13 +102,14 @@
             this.gridOneMain.Size = new System.Drawing.Size(1170, 361);
             this.gridOneMain.TabIndex = 3;
             this.gridOneMain.TabStop = false;
+            this.gridOneMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridOneMain_CellContentClick);
             this.gridOneMain.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridOneMain_CellValueChanged);
             // 
             // ID
             // 
             this.ID.DataPropertyName = "int";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.DefaultCellStyle = dataGridViewCellStyle21;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -112,30 +117,30 @@
             // 
             // FEseq
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FEseq.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FEseq.DefaultCellStyle = dataGridViewCellStyle22;
             this.FEseq.HeaderText = "FEseq";
             this.FEseq.Name = "FEseq";
             // 
             // Zhuyin
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Zhuyin.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Zhuyin.DefaultCellStyle = dataGridViewCellStyle23;
             this.Zhuyin.HeaderText = "Zhuyin";
             this.Zhuyin.Name = "Zhuyin";
             this.Zhuyin.Width = 250;
             // 
             // Traditional
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Traditional.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Traditional.DefaultCellStyle = dataGridViewCellStyle24;
             this.Traditional.HeaderText = "Traditional";
             this.Traditional.Name = "Traditional";
             // 
             // English
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.English.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.English.DefaultCellStyle = dataGridViewCellStyle25;
             this.English.HeaderText = "English";
             this.English.Name = "English";
             this.English.Width = 600;
@@ -168,6 +173,9 @@
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(890, 31);
             this.Status.TabIndex = 6;
+            this.Status.Click += new System.EventHandler(this.Status_TextChanged);
+            this.Status.TextChanged += new System.EventHandler(this.Status_TextChanged);
+            this.Status.Enter += new System.EventHandler(this.Status_TextChanged);
             // 
             // lbllabel1
             // 
@@ -196,6 +204,7 @@
             this.txtFEsequence.Name = "txtFEsequence";
             this.txtFEsequence.Size = new System.Drawing.Size(146, 31);
             this.txtFEsequence.TabIndex = 2;
+            this.txtFEsequence.Enter += new System.EventHandler(this.txtFEsequence_Enter);
             // 
             // btnExit
             // 
@@ -284,6 +293,8 @@
             this.textBox1.Size = new System.Drawing.Size(146, 31);
             this.textBox1.TabIndex = 14;
             this.textBox1.Text = "012345";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
             // 
             // txtFound
             // 
@@ -292,12 +303,25 @@
             this.txtFound.Name = "txtFound";
             this.txtFound.Size = new System.Drawing.Size(146, 31);
             this.txtFound.TabIndex = 15;
+            this.txtFound.TextChanged += new System.EventHandler(this.txtFound_TextChanged);
+            this.txtFound.Enter += new System.EventHandler(this.txtFound_TextChanged);
+            // 
+            // ShowLanguages
+            // 
+            this.ShowLanguages.Location = new System.Drawing.Point(1018, 388);
+            this.ShowLanguages.Name = "ShowLanguages";
+            this.ShowLanguages.Size = new System.Drawing.Size(143, 36);
+            this.ShowLanguages.TabIndex = 16;
+            this.ShowLanguages.Text = "Show Languages";
+            this.ShowLanguages.UseVisualStyleBackColor = true;
+            this.ShowLanguages.Click += new System.EventHandler(this.ShowLanguages_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1192, 579);
+            this.Controls.Add(this.ShowLanguages);
             this.Controls.Add(this.txtFound);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnScan);
@@ -353,6 +377,8 @@
         private System.Windows.Forms.Button btnScan;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtFound;
+        private System.Windows.Forms.Button ShowLanguages;
+        private InputLanguage[] _myLanguages = new InputLanguage[10];
     }
 }
 

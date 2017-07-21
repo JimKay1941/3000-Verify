@@ -16,7 +16,7 @@ namespace _3000_Verify
 
         private void btnContains_Click(object sender, EventArgs e)
         {
-            InputLanguage.CurrentInputLanguage = Variables.MyLanguages[0];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
 
             gridOneMain.Rows.Clear();
 
@@ -62,14 +62,14 @@ namespace _3000_Verify
             var index = 0;
             foreach (InputLanguage lang in InputLanguage.InstalledInputLanguages)
             {
-                Variables.MyLanguages[index] = lang;
+                _myLanguages[index] = lang;
                 index++;
             }
         }
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            InputLanguage.CurrentInputLanguage = Variables.MyLanguages[0];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
 
             gridOneMain.Rows.Clear();
 
@@ -107,7 +107,7 @@ namespace _3000_Verify
 
         private void UpdateRow()
         {
-            InputLanguage.CurrentInputLanguage = Variables.MyLanguages[0];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
 
             if (gridOneMain.CurrentRow == null) return;
             var idstring = gridOneMain.CurrentRow.Cells[0].EditedFormattedValue.ToString();
@@ -258,21 +258,23 @@ namespace _3000_Verify
 
         private void txtMainCharacter_Click(object sender, EventArgs e)
         {
-            InputLanguage.CurrentInputLanguage = Variables.MyLanguages[2];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Studying];
+            txtMainCharacter.ImeMode = ImeMode.On;
         }
 
         private void txtFEsequence_Click(object sender, EventArgs e)
         {
             txtFEsequence.Text = "";
             txtMainCharacter.Text = "";
-            InputLanguage.CurrentInputLanguage = Variables.MyLanguages[0];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
         }
 
         private void txtMainCharacter_Enter(object sender, EventArgs e)
         {
             txtFEsequence.Text = "";
             txtMainCharacter.Text = "";
-            InputLanguage.CurrentInputLanguage = Variables.MyLanguages[2];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Studying];
+            txtMainCharacter.ImeMode = ImeMode.On;
         }
 
         private void btnSetUserCredentials_Click(object sender, EventArgs e)
@@ -391,6 +393,50 @@ namespace _3000_Verify
                 if (txtFound.Text.Length == 6 && txtFound.Text == @"012345") Sane = true;
                 if (txtFound.Text.Length == 7 && txtFound.Text == @"0123456") Sane = true;
             } while (Sane);
+        }
+
+        private void ShowLanguages_Click(object sender, EventArgs e)
+        {
+            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+            var showLanguagesForm = new InstalledLangs();
+            showLanguagesForm.ShowDialog();
+        }
+
+        private void gridOneMain_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (gridOneMain.CurrentCell.ColumnIndex == 2 || gridOneMain.CurrentCell.ColumnIndex == 3)
+            {
+                InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Studying];
+                gridOneMain.ImeMode = ImeMode.On;
+            }
+            else
+            {
+                {
+                    InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+                    gridOneMain.ImeMode = ImeMode.Off;
+                }
+            }
+        }
+
+        private void txtFEsequence_Enter(object sender, EventArgs e)
+        {
+            txtFEsequence.Text = "";
+            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+        }
+
+        private void txtFound_TextChanged(object sender, EventArgs e)
+        {
+            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+        }
+
+        private void Status_TextChanged(object sender, EventArgs e)
+        {
+            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
         }
     }
 }
