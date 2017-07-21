@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using _3000_Verify.Properties;
 
 namespace _3000_Verify
 {
@@ -23,31 +24,31 @@ namespace _3000_Verify
             }
             Say.Text = "";
 
-            Properties.Settings.Default.Know = Convert.ToInt32(Known.Text);
+            Settings.Default.Know = Convert.ToInt32(Known.Text);
 
-            if (Properties.Settings.Default.Know > _index)
+            if (Settings.Default.Know > _index)
             {
                 Say.Text = @"Know value out of range";
                 return;
             }
 
-            Properties.Settings.Default.Studying = Convert.ToInt32(Studying.Text);
+            Settings.Default.Studying = Convert.ToInt32(Studying.Text);
 
-            if (Properties.Settings.Default.Studying > _index)
+            if (Settings.Default.Studying > _index)
             {
                 Say.Text = @"Studying value out of range";
                 return;
             }
 
 
-            Properties.Settings.Default.Save();
+            Settings.Default.Save();
             Close();
         }
 
         private void InstalledLangs_Load(object sender, EventArgs e)
         {
-            Known.Text = Properties.Settings.Default.Know.ToString(CultureInfo.InvariantCulture);
-            Studying.Text = Properties.Settings.Default.Studying.ToString(CultureInfo.InvariantCulture);
+            Known.Text = Settings.Default.Know.ToString(CultureInfo.InvariantCulture);
+            Studying.Text = Settings.Default.Studying.ToString(CultureInfo.InvariantCulture);
 
             listLangs.BeginUpdate();
             listLangs.Items.Clear();

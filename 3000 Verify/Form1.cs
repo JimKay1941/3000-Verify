@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using _3000_Verify.Properties;
 
@@ -16,11 +15,11 @@ namespace _3000_Verify
 
         private void btnContains_Click(object sender, EventArgs e)
         {
-            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Know];
 
             gridOneMain.Rows.Clear();
 
-            using (var d3K = new Dictionary3000DataContext(Properties.Settings.Default.ChineseStudyConnection))
+            using (var d3K = new Dictionary3000DataContext(Settings.Default.ChineseStudyConnection))
             {
                 IOrderedQueryable<_3000_Character> trads;
                 if (!chkByPass.Checked)
@@ -69,11 +68,11 @@ namespace _3000_Verify
 
         private void btnEquals_Click(object sender, EventArgs e)
         {
-            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Know];
 
             gridOneMain.Rows.Clear();
 
-            using (var d3K = new Dictionary3000DataContext(Properties.Settings.Default.ChineseStudyConnection))
+            using (var d3K = new Dictionary3000DataContext(Settings.Default.ChineseStudyConnection))
             {
                 IOrderedQueryable<_3000_Character> trads;
                 if (!chkByPass.Checked)
@@ -107,7 +106,7 @@ namespace _3000_Verify
 
         private void UpdateRow()
         {
-            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Know];
 
             if (gridOneMain.CurrentRow == null) return;
             var idstring = gridOneMain.CurrentRow.Cells[0].EditedFormattedValue.ToString();
@@ -144,7 +143,7 @@ namespace _3000_Verify
                 return;
             }
 
-            using (var d3K = new Dictionary3000DataContext(Properties.Settings.Default.ChineseStudyConnection))
+            using (var d3K = new Dictionary3000DataContext(Settings.Default.ChineseStudyConnection))
             {
                 var trads = from q in d3K._3000_Characters
                     where q.ID == idint
@@ -224,7 +223,7 @@ namespace _3000_Verify
 
             gridOneMain.Rows.Clear();
 
-            using (var d3K = new Dictionary3000DataContext(Properties.Settings.Default.ChineseStudyConnection))
+            using (var d3K = new Dictionary3000DataContext(Settings.Default.ChineseStudyConnection))
             {
                 var trads = from q in d3K._3000_Characters
                     where q.Traditional.Contains(txtMainCharacter.Text)
@@ -258,7 +257,7 @@ namespace _3000_Verify
 
         private void txtMainCharacter_Click(object sender, EventArgs e)
         {
-            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Studying];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Studying];
             txtMainCharacter.ImeMode = ImeMode.On;
         }
 
@@ -266,14 +265,14 @@ namespace _3000_Verify
         {
             txtFEsequence.Text = "";
             txtMainCharacter.Text = "";
-            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Know];
         }
 
         private void txtMainCharacter_Enter(object sender, EventArgs e)
         {
             txtFEsequence.Text = "";
             txtMainCharacter.Text = "";
-            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Studying];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Studying];
             txtMainCharacter.ImeMode = ImeMode.On;
         }
 
@@ -293,7 +292,7 @@ namespace _3000_Verify
             if (txtFEsequence.Text == "") return;
             
             var mainId = txtFEsequence.Text + @"01";
-            using (var d3K = new Dictionary3000DataContext(Properties.Settings.Default.ChineseStudyConnection))
+            using (var d3K = new Dictionary3000DataContext(Settings.Default.ChineseStudyConnection))
             {
                 var trads = from q in d3K._3000_Characters
                             where q.FEseq == mainId
@@ -309,19 +308,19 @@ namespace _3000_Verify
 
         private void btnScan_Click(object sender, EventArgs e)
         {
-            var Sane = false;
+            bool sane;
             do
             {
-                int ScanSequence;
-                var validid = Int32.TryParse(txtFEsequence.Text, out ScanSequence);
+                int scanSequence;
+                var validid = Int32.TryParse(txtFEsequence.Text, out scanSequence);
                 if (!validid)
                 {
                     Status.Text = @"Unable to convert FEseq from string to int32. Should not have happened!";
                     return;
                 }
 
-                ScanSequence++;
-                txtFEsequence.Text = ScanSequence.ToString(CultureInfo.InvariantCulture);
+                scanSequence++;
+                txtFEsequence.Text = scanSequence.ToString(CultureInfo.InvariantCulture);
                 txtMainCharacter.Text = @"";
 
                 var mainId = txtFEsequence.Text + @"01";
@@ -358,7 +357,7 @@ namespace _3000_Verify
                         }
                         gridOneMain.SelectAll();
 
-                        var FiftyFound = false;
+                        var fiftyFound = false;
                         txtFound.Text = @"";
 
                         var fePrefix = txtFEsequence.Text;
@@ -370,34 +369,32 @@ namespace _3000_Verify
                                 (((feFull.Length != fePrefixLength + 2)) || (feFull.Substring(0, fePrefixLength) != fePrefix)) &&
                                 (((feFull.Length != fePrefixLength)) || (feFull != fePrefix))) continue;
 
-                            if (feFull.Substring(feFull.Length - 2, 2) == @"50") FiftyFound = true;
-                            if (FiftyFound) txtFound.Text = txtFound.Text + feFull.Substring(feFull.Length - 1, 1);
+                            if (feFull.Substring(feFull.Length - 2, 2) == @"50") fiftyFound = true;
+                            if (fiftyFound) txtFound.Text = txtFound.Text + feFull.Substring(feFull.Length - 1, 1);
 
                             object[] row = { trad.ID.ToString(CultureInfo.InvariantCulture), trad.FEseq, trad.Zhuyin, trad.Traditional, trad.English, trad.NumPinyin, trad.CritPinyin, trad.Simplified, trad.Cji };
                             gridOneMain.Rows.Add(row);
                         }
 
                     }
-
-                    ScanSequence++;
                 }
 
-                Sane = false;
+                sane = false;
 
-                if (txtFound.Text.Length == 0 && txtFound.Text == @"") Sane = true;
-                if (txtFound.Text.Length == 1 && txtFound.Text == @"0") Sane = true;
-                if (txtFound.Text.Length == 2 && txtFound.Text == @"01") Sane = true;
-                if (txtFound.Text.Length == 3 && txtFound.Text == @"012") Sane = true;
-                if (txtFound.Text.Length == 4 && txtFound.Text == @"0123") Sane = true;
-                if (txtFound.Text.Length == 5 && txtFound.Text == @"01234") Sane = true;
-                if (txtFound.Text.Length == 6 && txtFound.Text == @"012345") Sane = true;
-                if (txtFound.Text.Length == 7 && txtFound.Text == @"0123456") Sane = true;
-            } while (Sane);
+                if (txtFound.Text.Length == 0 && txtFound.Text == @"") sane = true;
+                if (txtFound.Text.Length == 1 && txtFound.Text == @"0") sane = true;
+                if (txtFound.Text.Length == 2 && txtFound.Text == @"01") sane = true;
+                if (txtFound.Text.Length == 3 && txtFound.Text == @"012") sane = true;
+                if (txtFound.Text.Length == 4 && txtFound.Text == @"0123") sane = true;
+                if (txtFound.Text.Length == 5 && txtFound.Text == @"01234") sane = true;
+                if (txtFound.Text.Length == 6 && txtFound.Text == @"012345") sane = true;
+                if (txtFound.Text.Length == 7 && txtFound.Text == @"0123456") sane = true;
+            } while (sane);
         }
 
         private void ShowLanguages_Click(object sender, EventArgs e)
         {
-            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Know];
             var showLanguagesForm = new InstalledLangs();
             showLanguagesForm.ShowDialog();
         }
@@ -406,13 +403,13 @@ namespace _3000_Verify
         {
             if (gridOneMain.CurrentCell.ColumnIndex == 2 || gridOneMain.CurrentCell.ColumnIndex == 3)
             {
-                InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Studying];
+                InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Studying];
                 gridOneMain.ImeMode = ImeMode.On;
             }
             else
             {
                 {
-                    InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+                    InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Know];
                     gridOneMain.ImeMode = ImeMode.Off;
                 }
             }
@@ -421,22 +418,22 @@ namespace _3000_Verify
         private void txtFEsequence_Enter(object sender, EventArgs e)
         {
             txtFEsequence.Text = "";
-            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Know];
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Know];
         }
 
         private void txtFound_TextChanged(object sender, EventArgs e)
         {
-            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Know];
         }
 
         private void Status_TextChanged(object sender, EventArgs e)
         {
-            InputLanguage.CurrentInputLanguage = _myLanguages[Properties.Settings.Default.Know];
+            InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Know];
         }
     }
 }

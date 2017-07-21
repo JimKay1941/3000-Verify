@@ -1,4 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using _3000_Verify.ChineseStudyDataSetTableAdapters;
+
 namespace _3000_Verify
 {
     partial class Form1
@@ -6,7 +9,7 @@ namespace _3000_Verify
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -30,11 +33,11 @@ namespace _3000_Verify
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtMainCharacter = new System.Windows.Forms.TextBox();
             this.btnContains = new System.Windows.Forms.Button();
             this.gridOneMain = new System.Windows.Forms.DataGridView();
@@ -108,8 +111,8 @@ namespace _3000_Verify
             // ID
             // 
             this.ID.DataPropertyName = "int";
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -117,30 +120,30 @@ namespace _3000_Verify
             // 
             // FEseq
             // 
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FEseq.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FEseq.DefaultCellStyle = dataGridViewCellStyle2;
             this.FEseq.HeaderText = "FEseq";
             this.FEseq.Name = "FEseq";
             // 
             // Zhuyin
             // 
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Zhuyin.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Zhuyin.DefaultCellStyle = dataGridViewCellStyle3;
             this.Zhuyin.HeaderText = "Zhuyin";
             this.Zhuyin.Name = "Zhuyin";
             this.Zhuyin.Width = 250;
             // 
             // Traditional
             // 
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Traditional.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Traditional.DefaultCellStyle = dataGridViewCellStyle4;
             this.Traditional.HeaderText = "Traditional";
             this.Traditional.Name = "Traditional";
             // 
             // English
             // 
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.English.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.English.DefaultCellStyle = dataGridViewCellStyle5;
             this.English.HeaderText = "English";
             this.English.Name = "English";
             this.English.Width = 600;
@@ -204,6 +207,7 @@ namespace _3000_Verify
             this.txtFEsequence.Name = "txtFEsequence";
             this.txtFEsequence.Size = new System.Drawing.Size(146, 31);
             this.txtFEsequence.TabIndex = 2;
+            this.txtFEsequence.Click += new System.EventHandler(this.txtFEsequence_Click);
             this.txtFEsequence.Enter += new System.EventHandler(this.txtFEsequence_Enter);
             // 
             // btnExit
@@ -352,32 +356,32 @@ namespace _3000_Verify
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtMainCharacter;
-        private System.Windows.Forms.Button btnContains;
+        private TextBox txtMainCharacter;
+        private Button btnContains;
         private ChineseStudyDataSet chineseStudyDataSet;
-        private System.Windows.Forms.BindingSource charactersBindingSource;
-        private ChineseStudyDataSetTableAdapters._3000_CharactersTableAdapter _3000_CharactersTableAdapter;
-        private System.Windows.Forms.DataGridView gridOneMain;
-        private System.Windows.Forms.Button btnEquals;
-        private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.TextBox Status;
-        private System.Windows.Forms.Label lbllabel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtFEsequence;
-        private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.CheckBox chkByPass;
-        private System.Windows.Forms.Button btnSetUserCredentials;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FEseq;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Zhuyin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Traditional;
-        private System.Windows.Forms.DataGridViewTextBoxColumn English;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnFindMain;
-        private System.Windows.Forms.Button btnScan;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtFound;
-        private System.Windows.Forms.Button ShowLanguages;
+        private BindingSource charactersBindingSource;
+        private _3000_CharactersTableAdapter _3000_CharactersTableAdapter;
+        private DataGridView gridOneMain;
+        private Button btnEquals;
+        private Label lblStatus;
+        private TextBox Status;
+        private Label lbllabel1;
+        private Label label1;
+        private TextBox txtFEsequence;
+        private Button btnExit;
+        private CheckBox chkByPass;
+        private Button btnSetUserCredentials;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn FEseq;
+        private DataGridViewTextBoxColumn Zhuyin;
+        private DataGridViewTextBoxColumn Traditional;
+        private DataGridViewTextBoxColumn English;
+        private Button btnUpdate;
+        private Button btnFindMain;
+        private Button btnScan;
+        private TextBox textBox1;
+        private TextBox txtFound;
+        private Button ShowLanguages;
         private InputLanguage[] _myLanguages = new InputLanguage[10];
     }
 }

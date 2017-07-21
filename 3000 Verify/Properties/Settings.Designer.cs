@@ -8,14 +8,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.CodeDom.Compiler;
+using System.Configuration;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
+
 namespace _3000_Verify.Properties {
     
     
-    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.1.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+    [CompilerGenerated()]
+    [GeneratedCode("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.1.0.0")]
+    internal sealed partial class Settings : ApplicationSettingsBase {
         
-        private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        private static Settings defaultInstance = ((Settings)(Synchronized(new Settings())));
         
         public static Settings Default {
             get {
@@ -23,10 +28,10 @@ namespace _3000_Verify.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID" +
+        [ApplicationScopedSetting()]
+        [DebuggerNonUserCode()]
+        [SpecialSetting(SpecialSetting.ConnectionString)]
+        [DefaultSettingValue("Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID" +
             "=sa;Password=97GeneralHospital")]
         public string ChineseStudyConnectionString {
             get {
@@ -34,9 +39,9 @@ namespace _3000_Verify.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("97GeneralHospital")]
+        [UserScopedSetting()]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("97GeneralHospital")]
         public string Password {
             get {
                 return ((string)(this["Password"]));
@@ -46,9 +51,9 @@ namespace _3000_Verify.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ACER0")]
+        [UserScopedSetting()]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("ACER0")]
         public string SqlServer {
             get {
                 return ((string)(this["SqlServer"]));
@@ -58,9 +63,9 @@ namespace _3000_Verify.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("sa")]
+        [UserScopedSetting()]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("sa")]
         public string UserId {
             get {
                 return ((string)(this["UserId"]));
@@ -70,9 +75,9 @@ namespace _3000_Verify.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID" +
+        [UserScopedSetting()]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID" +
             "=sa;Password=97GeneralHospital")]
         public string UserConnectionString {
             get {
@@ -83,9 +88,9 @@ namespace _3000_Verify.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID" +
+        [UserScopedSetting()]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID" +
             "=sa;Password=97GeneralHospital")]
         public string ChineseStudyConnection {
             get {
@@ -96,10 +101,10 @@ namespace _3000_Verify.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID" +
+        [ApplicationScopedSetting()]
+        [DebuggerNonUserCode()]
+        [SpecialSetting(SpecialSetting.ConnectionString)]
+        [DefaultSettingValue("Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID" +
             "=sa;Password=97GeneralHospital")]
         public string ChineseStudyConnectionString2 {
             get {
@@ -107,10 +112,10 @@ namespace _3000_Verify.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID" +
+        [ApplicationScopedSetting()]
+        [DebuggerNonUserCode()]
+        [SpecialSetting(SpecialSetting.ConnectionString)]
+        [DefaultSettingValue("Data Source=ACER0;Initial Catalog=ChineseStudy;Persist Security Info=True;User ID" +
             "=sa;Password=97GeneralHospital")]
         public string ChineseStudyConnectionString1 {
             get {
@@ -118,9 +123,9 @@ namespace _3000_Verify.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [UserScopedSetting()]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("0")]
         public int Know {
             get {
                 return ((int)(this["Know"]));
@@ -130,9 +135,9 @@ namespace _3000_Verify.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [UserScopedSetting()]
+        [DebuggerNonUserCode()]
+        [DefaultSettingValue("0")]
         public int Studying {
             get {
                 return ((int)(this["Studying"]));

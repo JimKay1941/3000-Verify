@@ -1,11 +1,14 @@
-﻿namespace _3000_Verify
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace _3000_Verify
 {
     partial class SetUserCredentials
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -176,16 +179,16 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textUserId;
-        private System.Windows.Forms.Label lbllabel1;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textPassword1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textSqlServer;
-        private System.Windows.Forms.TextBox textPassword2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label txtStatus;
-        private System.Windows.Forms.Label lbllabel4;
+        private TextBox textUserId;
+        private Label lbllabel1;
+        private Button btnOK;
+        private Label label1;
+        private TextBox textPassword1;
+        private Label label2;
+        private TextBox textSqlServer;
+        private TextBox textPassword2;
+        private Label label3;
+        private Label txtStatus;
+        private Label lbllabel4;
     }
 }
