@@ -435,5 +435,34 @@ namespace _3000_Verify
         {
             InputLanguage.CurrentInputLanguage = _myLanguages[Settings.Default.Know];
         }
+
+        private void txtFEsequence_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+              SendKeys.Send("\t");
+            }
+        }
+
+        private void btnFindMain_Enter(object sender, EventArgs e)
+        {
+            btnFindMain_Click(sender, e);
+        }
+
+        private void btnFindMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("\t");
+            }
+        }
+
+        private void btnContains_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SendKeys.Send("\t");
+            }
+        }
     }
 }

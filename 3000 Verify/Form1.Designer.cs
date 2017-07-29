@@ -77,6 +77,7 @@ namespace _3000_Verify
             this.txtMainCharacter.Name = "txtMainCharacter";
             this.txtMainCharacter.Size = new System.Drawing.Size(34, 36);
             this.txtMainCharacter.TabIndex = 1;
+            this.txtMainCharacter.TabStop = false;
             this.txtMainCharacter.Click += new System.EventHandler(this.txtMainCharacter_Click);
             this.txtMainCharacter.Enter += new System.EventHandler(this.txtMainCharacter_Enter);
             // 
@@ -176,6 +177,7 @@ namespace _3000_Verify
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(890, 31);
             this.Status.TabIndex = 6;
+            this.Status.TabStop = false;
             this.Status.Click += new System.EventHandler(this.Status_TextChanged);
             this.Status.TextChanged += new System.EventHandler(this.Status_TextChanged);
             this.Status.Enter += new System.EventHandler(this.Status_TextChanged);
@@ -206,9 +208,10 @@ namespace _3000_Verify
             this.txtFEsequence.Location = new System.Drawing.Point(845, 432);
             this.txtFEsequence.Name = "txtFEsequence";
             this.txtFEsequence.Size = new System.Drawing.Size(146, 31);
-            this.txtFEsequence.TabIndex = 2;
+            this.txtFEsequence.TabIndex = 1;
             this.txtFEsequence.Click += new System.EventHandler(this.txtFEsequence_Click);
             this.txtFEsequence.Enter += new System.EventHandler(this.txtFEsequence_Enter);
+            this.txtFEsequence.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFEsequence_KeyDown);
             // 
             // btnExit
             // 
@@ -250,6 +253,7 @@ namespace _3000_Verify
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(123, 53);
             this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.TabStop = false;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -259,8 +263,7 @@ namespace _3000_Verify
             this.btnFindMain.Location = new System.Drawing.Point(382, 391);
             this.btnFindMain.Name = "btnFindMain";
             this.btnFindMain.Size = new System.Drawing.Size(123, 53);
-            this.btnFindMain.TabIndex = 3;
-            this.btnFindMain.TabStop = false;
+            this.btnFindMain.TabIndex = 2;
             this.btnFindMain.Text = "Find Main";
             this.btnFindMain.UseVisualStyleBackColor = true;
             this.btnFindMain.Click += new System.EventHandler(this.btnFindMain_Click);
@@ -271,6 +274,7 @@ namespace _3000_Verify
             this.btnScan.Name = "btnScan";
             this.btnScan.Size = new System.Drawing.Size(143, 34);
             this.btnScan.TabIndex = 13;
+            this.btnScan.TabStop = false;
             this.btnScan.Text = "Sanity";
             this.btnScan.UseVisualStyleBackColor = true;
             this.btnScan.Click += new System.EventHandler(this.btnScan_Click);
@@ -296,6 +300,7 @@ namespace _3000_Verify
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(146, 31);
             this.textBox1.TabIndex = 14;
+            this.textBox1.TabStop = false;
             this.textBox1.Text = "012345";
             this.textBox1.Click += new System.EventHandler(this.textBox1_Enter);
             this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
@@ -307,6 +312,7 @@ namespace _3000_Verify
             this.txtFound.Name = "txtFound";
             this.txtFound.Size = new System.Drawing.Size(146, 31);
             this.txtFound.TabIndex = 15;
+            this.txtFound.TabStop = false;
             this.txtFound.TextChanged += new System.EventHandler(this.txtFound_TextChanged);
             this.txtFound.Enter += new System.EventHandler(this.txtFound_TextChanged);
             // 
@@ -316,6 +322,7 @@ namespace _3000_Verify
             this.ShowLanguages.Name = "ShowLanguages";
             this.ShowLanguages.Size = new System.Drawing.Size(143, 36);
             this.ShowLanguages.TabIndex = 16;
+            this.ShowLanguages.TabStop = false;
             this.ShowLanguages.Text = "Show Languages";
             this.ShowLanguages.UseVisualStyleBackColor = true;
             this.ShowLanguages.Click += new System.EventHandler(this.ShowLanguages_Click);
