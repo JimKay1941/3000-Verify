@@ -303,6 +303,7 @@ namespace _3000_Verify
                     txtMainCharacter.Text = trad.Traditional;
                     break;
                 }
+                SendKeys.Send("\t");
             }
         }
 

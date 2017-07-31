@@ -33,11 +33,11 @@ namespace _3000_Verify
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtMainCharacter = new System.Windows.Forms.TextBox();
             this.btnContains = new System.Windows.Forms.Button();
             this.gridOneMain = new System.Windows.Forms.DataGridView();
@@ -87,7 +87,6 @@ namespace _3000_Verify
             this.btnContains.Name = "btnContains";
             this.btnContains.Size = new System.Drawing.Size(123, 53);
             this.btnContains.TabIndex = 3;
-            this.btnContains.TabStop = false;
             this.btnContains.Text = "Contains";
             this.btnContains.UseVisualStyleBackColor = true;
             this.btnContains.Click += new System.EventHandler(this.btnContains_Click);
@@ -103,7 +102,8 @@ namespace _3000_Verify
             this.English});
             this.gridOneMain.Location = new System.Drawing.Point(12, 12);
             this.gridOneMain.Name = "gridOneMain";
-            this.gridOneMain.Size = new System.Drawing.Size(1170, 361);
+            this.gridOneMain.RowHeadersWidth = 265;
+            this.gridOneMain.Size = new System.Drawing.Size(1395, 361);
             this.gridOneMain.TabIndex = 3;
             this.gridOneMain.TabStop = false;
             this.gridOneMain.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridOneMain_CellContentClick);
@@ -112,8 +112,8 @@ namespace _3000_Verify
             // ID
             // 
             this.ID.DataPropertyName = "int";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.DefaultCellStyle = dataGridViewCellStyle6;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -121,30 +121,30 @@ namespace _3000_Verify
             // 
             // FEseq
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FEseq.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FEseq.DefaultCellStyle = dataGridViewCellStyle7;
             this.FEseq.HeaderText = "FEseq";
             this.FEseq.Name = "FEseq";
             // 
             // Zhuyin
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Zhuyin.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Zhuyin.DefaultCellStyle = dataGridViewCellStyle8;
             this.Zhuyin.HeaderText = "Zhuyin";
             this.Zhuyin.Name = "Zhuyin";
             this.Zhuyin.Width = 250;
             // 
             // Traditional
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Traditional.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Traditional.DefaultCellStyle = dataGridViewCellStyle9;
             this.Traditional.HeaderText = "Traditional";
             this.Traditional.Name = "Traditional";
             // 
             // English
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.English.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("MingLiU", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.English.DefaultCellStyle = dataGridViewCellStyle10;
             this.English.HeaderText = "English";
             this.English.Name = "English";
             this.English.Width = 600;
@@ -331,7 +331,7 @@ namespace _3000_Verify
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1192, 579);
+            this.ClientSize = new System.Drawing.Size(1419, 579);
             this.Controls.Add(this.ShowLanguages);
             this.Controls.Add(this.txtFound);
             this.Controls.Add(this.textBox1);
